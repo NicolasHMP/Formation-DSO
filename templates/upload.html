@@ -1,0 +1,116 @@
+<link rel="stylesheet" type="text/css" href="../static/styles/style.css" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation-HMP</title>
+</head>
+<body>
+    <!--
+    <div class="logo-container">
+        <a href="#"><img src="../static/images/Logo_site_wobg.png" alt="Logo du site" class="logo"></a>
+    </div>
+    -->
+    <nav class="menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/upload">Upload</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="uploadhtml">
+        <h1>Upload a YAML File</h1>
+            <div class="upload-file">
+                <form action="/uploaded" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" />
+                    <input type="submit" value="Upload File" />
+                </form>
+            </div>
+            <h1>Contenu du fichier YAML</h1>
+            {% if file_content %}
+            <ul>
+                {% if file_content is mapping %}
+                    {% for key, value in file_content.items() %}
+                            <li class="no">
+                                <div class="key">
+                                    <strong>{{ key }}:</strong>
+                                </div>
+                                {% if value is mapping %}
+                                        <!-- Si la valeur est un dictionnaire, on le parcourt récursivement -->
+                                    <div class="subkey">
+                                        <ul>
+                                            {% for subkey, subvalue in value.items() %}
+                                            <li class="no">
+                                                {{ subkey }}:
+                                                {% if subvalue is mapping %}
+                                                    <!-- Si la valeur est un dictionnaire imbriqué -->
+                                                    <ul>
+                                                        {% for subsubkey, subsubvalue in subvalue.items() %}
+                                                                <li class="no">{{ subsubkey }}: {{ subsubvalue }}</li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                    {% elif subvalue is sequence and subvalue is not string %}
+                                                    <!-- Si la valeur est une liste -->
+                                                    <ul>
+                                                        {% for item in subvalue %}
+                                                                <li class="no">{{ item }}</li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                    {% else %}
+                                                    <!-- Si c'est une valeur simple ou une chaîne de caractères -->
+                                                    {{ subvalue }}
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                        </ul>
+                                    </div>
+                                    {% elif value is sequence and value is not string %}
+                                    <!-- Si la valeur est une liste -->
+                                    <ul>
+                                        {% for item in value %}
+                                        <div class="subkey">
+                                            <li class="no">{{ item }}</li>
+                                        </div>
+                                        {% endfor %}
+                                    </ul>
+                                    {% else %}
+                                    <!-- Si c'est une valeur simple ou une chaîne de caractères -->
+                                    <ul>
+                                        <div class="subkey">
+                                            <li class="no">{{ value }}</li>
+                                        </div>
+                                    </ul>
+                                {% endif %}
+                            </li>
+                        <br>
+                    {% endfor %}
+                {% else %}
+                    {{ file_content }}
+                {% endif %}
+            </ul>
+            
+            
+            {% else %}
+            <p>Le fichier YAML est vide ou introuvable.</p>
+            {% endif %}
+        <br><br>
+        <hr>
+    </section>
+    <section id="imageHMP">
+        <img src="../static/images/HMP.png" alt="icon" width="20%" height="20%">
+        <br>
+    </section>
+
+    
+    
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Site de Configuration. Tous droits réservés.</p>
+        <p><a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
+    </footer>
+</body>
+</html>
