@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # HMP - Formation DevSecOps
 
 L'objectif de ce repository et de pouvoir fournir une formation DevSecOps la plus complète possible. Pour cela on exploite une vulnérabilité qui permet à un utilisateur d'exécuter du code en injectant un fichier YAML.
@@ -44,3 +45,6 @@ ________________________________________________________________________________
    ![HMP](https://github.com/user-attachments/assets/e7576c9a-c7bd-4150-aba2-9adee745a976)
 
 
+=======
+# Formation-DSO
+>>>>>>> de8761636ab437c07b81e3a2a08d441d2313c677
