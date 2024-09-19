@@ -21,7 +21,8 @@ Github :
 1) Après s'être connecté, créer un repository
 2) Une fois le repo créé, aller dans "code" en haut et cliquier sur le bouton vert "<> CODE" Puis sur le deux carrés "Copy url to clipboard"
 3) Aller sur votre terminal et faites le commande suivi de ce qui a été copié "git clone <url>", cela va permettre de télécharger votre repository
-4) git config --global user.name "Your Name"
+4) git pull --allow-unrelated-histories
+5) git push
 
 Etapes à suivre :
 
@@ -45,6 +46,3 @@ ________________________________________________________________________________
    ![HMP](https://github.com/user-attachments/assets/e7576c9a-c7bd-4150-aba2-9adee745a976)
 
 
-=======
-# Formation-DSO
->>>>>>> de8761636ab437c07b81e3a2a08d441d2313c677
