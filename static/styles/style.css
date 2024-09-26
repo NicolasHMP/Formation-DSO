@@ -1,0 +1,312 @@
+.form {
+    margin: 10;
+}
+/* Style pour le menu */
+.menu {
+    background-color: #333;  /* Couleur de fond du menu */
+    padding: 10px 0;
+}
+
+/* Style pour la liste des éléments */
+.menu ul {
+    list-style-type: none;   /* Supprimer les puces de la liste */
+    margin: 0;
+    padding: 0;
+    display: flex;           /* Utilisation de flexbox pour aligner les éléments horizontalement */
+    justify-content: center; /* Centrer les éléments du menu */
+}
+
+/* Style pour chaque élément de la liste */
+.menu ul li {
+    margin: 0 15px;          /* Espacement entre les éléments */
+}
+
+/* Style pour les liens dans le menu */
+.menu ul li a {
+    text-decoration: none;   /* Supprimer le soulignement des liens */
+    color: white;            /* Couleur du texte */
+    padding: 10px 20px;      /* Espacement interne des liens */
+    display: block;
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Transition pour l'animation */
+}
+
+/* Effet de survol */
+.menu ul li a:hover {
+    background-color: #555;  /* Changer la couleur de fond au survol */
+    transform: scale(1.1);   /* Agrandir légèrement l'élément au survol */
+}
+
+/* Effet dynamique au clic */
+.menu ul li a:active {
+    background-color: #222;  /* Changer de couleur au clic */
+    transform: scale(0.95);  /* Réduire légèrement l'élément au clic */
+}
+
+/* Styles généraux */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: white; /*#f4f4f4*/
+    height: 100%; /* Assure que le body prend toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+}
+
+/* En-tête */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Section À propos */
+#about {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2rem;
+}
+
+/* Section Fonctionnalités */
+#features {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center
+    
+}
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.feature {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+}
+
+#upload-yaml {
+    background-color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Section Témoignages */
+#testimonials {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section Contact */
+#contact {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Pied de page */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Media Queries pour rendre la page responsive */
+@media (max-width: 768px) {
+    .feature-grid {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        top: 10px;
+        right: 10px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+#uploadhtml {
+    background-color: white;
+    text-align: center;
+}
+
+#imageHMP {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.no {
+    display: block;
+    position: relative;
+    left: 0px;
+    list-style:none;
+    margin: 0px;
+    padding:0px
+}
+
+.key {
+    position: relative;
+    left: -800px;
+    list-style:none;
+    margin: 0px;
+    padding:0px
+}
+
+.subkey {
+    text-align: left;
+    position: relative;
+    left: 450px;
+    list-style:none;
+    margin: 0px;
+    padding:0px
+}
+
+.stringsimple {
+    text-align: left;
+    position: relative;
+    left: 600px;
+    list-style:none;
+    margin: 0px;
+    padding:0px
+}
+
+#subkey ul {margin:0px;padding:0px}
+#subkey ul li{
+  text-align: left;
+  list-style:none
+}
+
+#subkey h2{min-height:30px}
+
+#erreur {
+    font-size: 470%;
+    text-align: left;
+    text-align: center;
+}
+#type_erreur {
+    font-size: 300%;
+    text-align: center;
+}
+
+#imageHMP_erreur {
+    flex-grow: 1;
+}
+
+/*
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 100px; /* Ajustez la taille du logo 
+}*/

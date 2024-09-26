@@ -1,0 +1,10 @@
+name: John Doe
+age: 30
+city: Paris
+skills:
+  - Python
+  - Flask
+  - YAML
+
+
+

