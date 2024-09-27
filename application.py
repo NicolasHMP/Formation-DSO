@@ -110,6 +110,8 @@ def gen_reqtxt(directory):
     #Fait le match pour récupérer les versions des dépendances présentes dans pipreqs
     final_lib = []
     for value in all_lib_install:
+        if '==' not in value: continue
+
         if value[:value.index('==')+2] in lib_pipreqs:
             final_lib.append(value)
 
