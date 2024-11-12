@@ -14,8 +14,6 @@ import sys
 #Init est utilisé pour l'ajout de coleur dans le code
 init()
 
-secret="azerty123"
-
 #Permet de définir l'application Flask
 app = Flask(__name__)
 
@@ -122,6 +120,7 @@ def gen_reqtxt(directory):
 
 if __name__ == '__main__':
     #Récupère le path de l'application
+    app.run(host="0.0.0.0", port=5000)
     directory = f'{Path(__file__).parent}'
     gen_reqtxt(directory)
     app.run(debug=False)

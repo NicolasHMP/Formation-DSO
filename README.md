@@ -20,7 +20,7 @@ Github :
 
 Etapes à suivre :
 
-1) Téléchargez le fichier [ZIP de ce projet](https://github.com/HMP-DSO/Formation-DSO/archive/refs/heads/main.zip) via GitHub et décompressez-le, puis copiez les fichiers dans le répertoire que vous avez cloné précédemment.
+1) Téléchargez le fichier [ZIP de ce projet](https://github.com/HMP-DSO/Formation-DSO/archive/refs/heads/main.zip) via GitHub et décompressez-le, puis copiez les fichiers dans le répertoire que vous avez cloné précédemment. //Gitclone
 
 2) Ouvrez le fichier requirements.txt et vérifier que la version de PyYAML est bien la 5.3 "PyYAML==5.3". (Si besoin taper: pip install pyyaml==5.3)
 
@@ -35,6 +35,10 @@ Etapes à suivre :
 7) Relancez l'application et vérifiez que le fichier "requirements.txt" s'est bien mis à jour et que la version de PyYAML est bien la 5.3.1 "PyYAML==5.3.1".
 
 8) Aller sur le navigateur et dans la barre de navigation taper "127.0.0.1:5000". Essayer à nouveau d'envoyer le fichier YAML et regarder le terminal. Une erreur (500) devrait apparaître. Il n'est donc plus possible d'exploiter la vulnérabilité.
+
+#Help :
+Supprimer tt les containers:
+docker ps -aq | ForEach-Object { docker rm -f $_ } 
    
 ____________________________________________________________________________________________________________
    ![HMP](https://github.com/user-attachments/assets/e7576c9a-c7bd-4150-aba2-9adee745a976)
