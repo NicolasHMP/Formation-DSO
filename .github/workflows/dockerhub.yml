@@ -32,7 +32,7 @@ jobs:
         docker --version
         docker buildx version
         docker buildx create --use 
-        docker buildx build --platform windows/amd64 -t nicolashmp/tp-yaml:latest
+        docker buildx build --platform windows/amd64 -t nicolashmp/tp-yaml:latest . --push
 
     - name: Clean up Docker
       run : docker system prune -af 
