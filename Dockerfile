@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-
-COPY application.py /
+COPY . /tp-yaml
+WORKDIR /tp-yaml
 
 CMD [ "python", "./application.py" ]
