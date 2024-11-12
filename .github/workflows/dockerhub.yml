@@ -28,8 +28,10 @@ jobs:
     - name: Build and push Docker image
       #uses: docker/build-push-action@v5
       run : |
+        Start-Service Docker
+        docker info
         docker buildx create --use 
-        docker buildx build --platform windows/adm64 -t nicolashmp/tp-yaml:latest
+        docker buildx build --platform windows/amd64 -t nicolashmp/tp-yaml:latest
 
     - name: Clean up Docker
       run : docker system prune -af 
