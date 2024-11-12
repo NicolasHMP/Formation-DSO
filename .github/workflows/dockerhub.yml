@@ -7,8 +7,10 @@ on:
 jobs:
 
   build:
-
     runs-on: windows-latest
+    env : 
+      DOCKER_CLI_EXPERIMENTAL: enabled
+      DOCKER_BUILDKIT: 1
 
     steps:
     - name: Check out the repo
