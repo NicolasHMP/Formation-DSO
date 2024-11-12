@@ -4,4 +4,4 @@ WORKDIR /tp-yaml
 
 
 EXPOSE 1234
-CMD [ "/application.py" ]
+CMD [ "/tp-yaml/application.py" ]
