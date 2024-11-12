@@ -2,4 +2,6 @@ FROM ubuntu:latest
 COPY . /tp-yaml
 WORKDIR /tp-yaml
 
-CMD [ "python", "./application.py" ]
+
+EXPOSE 1234
+CMD [ "/application.py" ]
