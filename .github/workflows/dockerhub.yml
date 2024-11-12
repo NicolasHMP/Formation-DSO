@@ -27,19 +27,9 @@ jobs:
        username: ${{ secrets.DOCKERHUB_USERNAME }}
        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build and push Docker image
-      #uses: docker/build-push-action@v5
-      #docker buildx create --use
-      run : |
-        docker info
-        docker --version
-        docker buildx version
- 
-        docker buildx build --platform windows/amd64 -t nicolashmp/tp-yaml:latest . --push
-
-    - name: Clean up Docker
-      run : docker system prune -af 
-     # with:
-      # context: 
-      # push: true
-      # tags: nicolashmp/tp-yaml:latest
+    - name: Build and push to dockerhub
+      uses: docker/build-push-action@v5 
+      with:
+       context: 
+       push: true
+       tags: nicolashmp/tp-yaml:latest
