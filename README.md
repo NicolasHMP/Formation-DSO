@@ -12,15 +12,18 @@ Pré-requis :
 - Avoir un compte github
 - De préférence, avoir un éditeur de code (ex: VS Code)
 
-Github :
-1) Après s'être connecté, créer un repository.
-2) Une fois le repo créé, aller dans "code" en haut et cliquer sur le bouton vert "<> CODE" Puis sur les deux carrés "Copy url to clipboard".
-3) Aller sur votre terminal et faites la commande suivie de ce qui a été copié "git clone \<url\>", cela va permettre de télécharger votre repository. Attention, si vous avez l'erreur "Repository not found", utiliser le même URL mais avec le username de votre compte suivi de '@'. ex: git clone https://'username'@github.com/HMP-DSO/Formation-DSO.git.
-5) Votre répertoire est maintenant prêt.
-
 Etapes à suivre :
 
-1) Téléchargez le fichier [ZIP de ce projet](https://github.com/HMP-DSO/Formation-DSO/archive/refs/heads/main.zip) via GitHub et décompressez-le, puis copiez les fichiers dans le répertoire que vous avez cloné précédemment. //Gitclone
+I - Préparation de l'environnement
+1) Faire un fork de ce [projet](https://github.com/HMP-DSO/Formation-DSO) vers votre répository Head Mind.
+
+2) Cliquer sur code (bouton vert), dans HTTPS copier l'URL (.git) et aller dans votre invite de commande et taper la commande :
+
+'''
+git clone [URL .git]
+'''
+
+II - Découverte et test de l'application
 
 2) Ouvrez le fichier requirements.txt et vérifier que la version de PyYAML est bien la 5.3 "PyYAML==5.3". (Si besoin taper: pip install pyyaml==5.3)
 
@@ -30,7 +33,19 @@ Etapes à suivre :
 
 5) Dans l'onglet "Upload", sélectionnez et upload le fichier "payload.yaml". Regardez alors votre terminal. La commande "dir" s'est exécutée et vous pouvez voir la liste des fichiers et dossiers de votre répertoire. Cela veut donc dire que la vulnérabilité a bien été exploitée.
 
-6) Avec CTRL+C arrétez l'exécution de l'application dans votre terminal. Tapez la commande "pip install pyyaml==5.3.1". La vulnérabilité que l'on vient d'exploiter a été corrigée dans la version PyYAML 5.3.1.
+III - Branch dev
+
+5) Créer une nouvelle branch 'dev' et allez dessus
+'''
+git branch dev
+git checkout dev
+'''
+
+IV - Correction de la vuln
+
+6) Avec CTRL+C arrétez l'exécution de l'application dans votre terminal. Tapez la commande "pip install pyyaml==5.3.1". La vulnérabilité que l'on vient d'exploiter a été corrigée dans la version PyYAML 5.3.1. Utiliser le script "update_requirements.py" pour mettre à jour le fichier requirements.txt
+
+7) Faire un git add / git commit / git push et vérifier que l'on ne détecte plus la vuln dans github
 
 7) Relancez l'application et vérifiez que le fichier "requirements.txt" s'est bien mis à jour et que la version de PyYAML est bien la 5.3.1 "PyYAML==5.3.1".
 
