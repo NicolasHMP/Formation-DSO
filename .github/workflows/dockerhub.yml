@@ -28,8 +28,9 @@ jobs:
     - name: Build and push Docker image
       #uses: docker/build-push-action@v5
       run : |
-        Start-Service Docker
         docker info
+        docker --version
+        docker buildx version
         docker buildx create --use 
         docker buildx build --platform windows/amd64 -t nicolashmp/tp-yaml:latest
 
