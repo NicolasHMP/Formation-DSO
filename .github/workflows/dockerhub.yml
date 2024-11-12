@@ -28,6 +28,7 @@ jobs:
 
     - name: Build and Push Docker image
       run: |
+        docker version
         docker buildx build --platform windows/amd64 -t nicolashmp/tp-yaml:latest . --push
     #- name: Build and push to dockerhub
     #  uses: docker/build-push-action@v5 
