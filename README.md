@@ -6,9 +6,9 @@ L'application permet à un utilisateur de selectionner un fichier YAML et de l'u
 POC : https://gist.github.com/adamczi/23a3b6d4bb7b2be35e79b0667d6682e1
 
 ## Pré-requis :
-- Avoir Git
-- Avoir un PC sous Windows
-- Python 
+- Avoir Git [git version 2.33.0.windows.2]
+- Avoir un PC sous Windows [W7 / W10]
+- Python [Python 3.9.x]
 - Avoir un compte github
 - De préférence, avoir un éditeur de code (ex: VS Code)
 
@@ -28,7 +28,7 @@ git clone [URL .git]
 
 3) Avec python, exécutez :
 ```
-application.py
+.\application.py
 ```
 
 4) Allez sur le navigateur et dans la barre de navigation tapez "127.0.0.1:5000". Vous devriez tomber sur un site web d'analyse de fichier de configuration 
@@ -36,7 +36,7 @@ application.py
 5) Dans l'onglet "Upload", sélectionnez et upload le fichier "payload.yaml". Regardez alors votre terminal. La commande "dir" s'est exécutée et vous pouvez voir la liste des fichiers et dossiers de votre répertoire. Cela veut donc dire que la vulnérabilité a bien été exploitée.
 Avec CTRL+C il est possible d'arréter l'exécution de l'application dans votre terminal. 
 
-### III - Branch dev
+### III - Correction de la vuln
 
 5) Créer une nouvelle branch 'dev' et aller dessus
 ```
@@ -44,13 +44,19 @@ git branch dev
 git checkout dev
 ```
 
-### IV - Correction de la vuln
+6) La vulnérabilité que l'on vient d'exploiter a été corrigée dans la version PyYAML 5.3.1.
+Tapez les commandes suivantes pour mettre à jour la dépendance et mettre à jour le fichier requirements.txt. 
+```
+pip install pyyaml==5.3.1
+.\update_requirements.py
+```
 
-6) Tapez la commande "pip install pyyaml==5.3.1". La vulnérabilité que l'on vient d'exploiter a été corrigée dans la version PyYAML 5.3.1. Utiliser le script "update_requirements.py" pour mettre à jour le fichier requirements.txt
+7) Vérifier que le fichier "requirements.txt" s'est bien mis à jour et que la version de PyYAML est bien la 5.3.1 "PyYAML==5.3.1". On va maintenant vérifier que la vulnérabilité est bien corrigée. Relancer l'application.
+```
+.\application.py
+```
 
-7) Relancez l'application et vérifiez que le fichier "requirements.txt" s'est bien mis à jour et que la version de PyYAML est bien la 5.3.1 "PyYAML==5.3.1".
-
-8) Aller sur le navigateur et dans la barre de navigation taper "127.0.0.1:5000". Essayer à nouveau d'envoyer le fichier YAML et regarder le terminal. Une erreur (500) devrait apparaître. Il n'est donc plus possible d'exploiter la vulnérabilité.
+8) Aller dans votre navigateur et dans la barre de navigation taper "127.0.0.1:5000". Essayer à nouveau d'envoyer le fichier YAML et regarder le terminal. Une erreur (500) devrait apparaître. Il n'est donc plus possible d'exploiter la vulnérabilité.
 
 9) Faire un git add / git commit / git push de l'application avec la nouvelle version de PyYAML vers la branch dev.
 
@@ -58,7 +64,7 @@ git checkout dev
 ```
 git merge [branch]
 ```
-#Help :
+# Help :
 Supprimer tt les containers:
 docker ps -aq | ForEach-Object { docker rm -f $_ } 
    
