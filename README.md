@@ -53,8 +53,9 @@ IV - Correction de la vuln
 9) Faire un git add / git commit / git push de l'application avec la nouvelle version de PyYAML vers la branch dev.
 
 10) Faire un merge de la branch dev vers la branch main
-
-
+```
+git merge [branch]
+```
 #Help :
 Supprimer tt les containers:
 docker ps -aq | ForEach-Object { docker rm -f $_ } 
