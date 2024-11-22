@@ -50,17 +50,15 @@ pip install pyyaml==5.3.1
 ```
 git add .
 git commit -m "first commit dev"
-git push
+git push --set-upstream origin dev
 ```
 
 8) Aller dans github et vérifiez que la version de PyYAML dans la branch dev est bien en 5.3.1 alors que dans la branch main elle n'est encore que en 5.3.
 
-9) Faire un merge de la branch dev vers la branch main
-```
-git merge [branch]
-``` 
+9) Faire un merge de la branch dev vers la branch main. 
+Aller dans git => pull request => créer une pull request => merge pull request => confirm merge
 
-10) Vérifier alors que dans la branch main, la valeur de PyYAML est bien 5.3.1
+10) Vérifier alors que les deux branch ont bien la même valeur pour PyYAML.
 
 ## TP DevSecOps 1
 
