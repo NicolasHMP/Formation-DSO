@@ -14,6 +14,11 @@ import sys
 #Init est utilisé pour l'ajout de coleur dans le code
 init()
 
+<<<<<<< HEAD
+=======
+secret="azerty123"
+
+>>>>>>> 07be244be659fdae363d919464ba0f8e53f59cbd
 #Permet de définir l'application Flask
 app = Flask(__name__)
 
@@ -108,8 +113,11 @@ def gen_reqtxt(directory):
     #Fait le match pour récupérer les versions des dépendances présentes dans pipreqs
     final_lib = []
     for value in all_lib_install:
+<<<<<<< HEAD
         if '==' not in value: continue
 
+=======
+>>>>>>> 07be244be659fdae363d919464ba0f8e53f59cbd
         if value[:value.index('==')+2] in lib_pipreqs:
             final_lib.append(value)
 
@@ -120,7 +128,10 @@ def gen_reqtxt(directory):
 
 if __name__ == '__main__':
     #Récupère le path de l'application
+<<<<<<< HEAD
     app.run(host="0.0.0.0", port=5000)
+=======
+>>>>>>> 07be244be659fdae363d919464ba0f8e53f59cbd
     directory = f'{Path(__file__).parent}'
     gen_reqtxt(directory)
     app.run(debug=False)

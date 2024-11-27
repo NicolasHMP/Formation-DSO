@@ -255,7 +255,11 @@ footer a {
 
 .key {
     position: relative;
+<<<<<<< HEAD
     left: -70px; /* -800px */
+=======
+    left: -800px;
+>>>>>>> 07be244be659fdae363d919464ba0f8e53f59cbd
     list-style:none;
     margin: 0px;
     padding:0px
@@ -264,7 +268,11 @@ footer a {
 .subkey {
     text-align: left;
     position: relative;
+<<<<<<< HEAD
     left: 1160px; /* 450px */
+=======
+    left: 450px;
+>>>>>>> 07be244be659fdae363d919464ba0f8e53f59cbd
     list-style:none;
     margin: 0px;
     padding:0px

